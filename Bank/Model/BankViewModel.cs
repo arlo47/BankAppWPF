@@ -18,7 +18,7 @@ namespace Bank.Model {
         }
 
         public List<User> GetAllUsers() {
-            return context.Users.ToList();
+            return context.Users.Include("UserAccount").ToList();
         }
 
         public void AddNewUser(User newUser) {
